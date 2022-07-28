@@ -1,0 +1,18 @@
+{% extends 'tasks/baza.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+    <h1>Создать заметку</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.name }}<br>
+        {{ form.description }}<br>
+        <button type="submit" class="btn btn-success">Добавить заметочку</button>
+        <span>{{ error }}</span>
+    </form>
+
+{%  endblock %}

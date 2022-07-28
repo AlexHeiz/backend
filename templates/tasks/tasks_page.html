@@ -1,0 +1,20 @@
+
+{% extends 'tasks/baza.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+    <h1>Главная страница</h1>
+    <form method=""
+    {% for el in tasks %}
+        <div class = "alert-success mt-2">
+            <h3>{{ el.name }}</h3>
+            <p>{{ el.created_date }}</p>
+            <p>{{ el.description }}</p>
+            <button type="submit" class="btn btn-success">Выполнено</button>
+        </div>
+    {% endfor %}
+{%  endblock %}
