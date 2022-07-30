@@ -2,10 +2,10 @@ from django.shortcuts import render, redirect
 from .models import Task
 from .forms import TaskForm
 from django.views.generic import DeleteView
-'''
+
 from rest_framework import generics
-from serializer import TaskSerializer
-'''
+from .serializers import TaskSerializer
+
 
 def tasks(request):
 
@@ -25,7 +25,7 @@ def tasks(request):
         print('Task.objects.filter(pk=post_pk)', Task.objects.filter(pk=post_pk))
         Task.objects.filter(pk=post_pk).delete()
         if Task.objects.filter(pk=post_pk).exists():
-        Task.objects.get(pk=post_pk).delete()
+            Task.objects.get(pk=post_pk).delete()
 
     tasks = Task.objects.all()
 
