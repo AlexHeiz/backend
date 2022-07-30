@@ -1,0 +1,16 @@
+{% extends 'tasks/baza.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+    <div class = "features">
+        <h1>Выбрать заметку</h1>
+        <form method="get">
+            {% csrf_token %}
+            <button class="btn btn-danger" type="submit">Уд</button>
+        </form>
+    </div>
+{%  endblock %}

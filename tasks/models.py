@@ -11,7 +11,8 @@ class Task(models.Model):
     def __str__(self):
         return self.name
 
+
     class Meta():
         verbose_name = 'Задание'
         verbose_name_plural = 'Задания'
-        ordering = ["-created"]
+
