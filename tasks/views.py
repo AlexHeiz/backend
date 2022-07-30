@@ -17,6 +17,8 @@ def tasks(request):
     print(request.POST)
     print('*' * 60)
 
+    print('YO')
+
     post_pk = request.POST.get('DeleteButton')
     if post_pk:
         print('post_pk:', post_pk)
