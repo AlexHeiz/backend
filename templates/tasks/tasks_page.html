@@ -10,15 +10,15 @@
     <h1>Главная страница</h1>
 
     {% for el in tasks %}
+        {{ el.pk }}
         <div class = "alert-success mt-2">
              <form method="POST">
                  {% csrf_token %}
-                 <button name="DeleteButton" value="34293423" class="btn btn-danger" type="submit">Удалить</button>
+                 <button name="DeleteButton" value="{{ el.pk }}" class="btn btn-danger" type="submit">Удалить</button>
              </form>
             <h3>{{ el.name }}</h3>
             <p>{{ el.created_date }}</p>
             <p>{{ el.description }}</p>
-
         </div>
     {% endfor %}
 {%  endblock %}
