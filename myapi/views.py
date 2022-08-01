@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect
+# from django.shortcuts import render, redirect
 from tasks.models import Task
-
 from rest_framework import viewsets
 from .serializers import TaskSerializer
+
 
 
 class TaskViewSet(viewsets.ModelViewSet):
