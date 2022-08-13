@@ -9,6 +9,7 @@
 {% block content %}
     <h1>Главная страница</h1>
 
+
     {% for el in tasks %}
         {{ el.pk }}
         <div class = "alert-success mt-2">
@@ -16,9 +17,14 @@
                  {% csrf_token %}
                  <button name="DeleteButton" value="{{ el.pk }}" class="btn btn-danger" type="submit">Удалить</button>
              </form>
+             <form method="GET">
+                 {% csrf_token %}
+                 <button name="take_task" value="{{ el.pk }}" class="btn btn-success" type="submit">Выбрать</button>
+             </form>
             <h3>{{ el.name }}</h3>
             <p>{{ el.created_date }}</p>
             <p>{{ el.description }}</p>
+            <p>{{ el.completed }}</p>
         </div>
     {% endfor %}
 {%  endblock %}
